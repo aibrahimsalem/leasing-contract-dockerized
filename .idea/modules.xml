@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/leasing-contract-dockerized.iml" filepath="$PROJECT_DIR$/.idea/leasing-contract-dockerized.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/leasing-contract.main.iml" filepath="$PROJECT_DIR$/.idea/modules/leasing-contract.main.iml" />
     </modules>
   </component>
 </project>

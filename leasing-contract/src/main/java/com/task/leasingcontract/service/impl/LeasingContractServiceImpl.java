@@ -6,6 +6,8 @@ import com.task.leasingcontract.service.LeasingContractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class LeasingContractServiceImpl implements LeasingContractService {
 
@@ -13,17 +15,24 @@ public class LeasingContractServiceImpl implements LeasingContractService {
     private LeasingContractRepository leasingContractRepository;
 
     @Override
-    public long addLeasingContract(LeasingContract leasingContract) {
-        return 0;
+    public LeasingContract addLeasingContract(LeasingContract leasingContract) {
+        return leasingContractRepository.save(leasingContract);
     }
 
     @Override
-    public long editLeasingContract(LeasingContract leasingContract) {
-        return 0;
+    public LeasingContract editLeasingContract(LeasingContract leasingContract) {
+        Optional<LeasingContract> leasingContractOptional = leasingContractRepository.findById(leasingContract.getId());
+        if (leasingContractOptional.isPresent()) {
+            LeasingContract storedLeasingContract = leasingContractOptional.get();
+            storedLeasingContract.setContractNumber(leasingContract.getContractNumber());
+            storedLeasingContract.setMonthlyRate(leasingContract.getMonthlyRate());
+            return leasingContractRepository.save(storedLeasingContract);
+        }
+        return leasingContractRepository.save(leasingContract);
     }
 
     @Override
-    public long deleteLeasingContract(LeasingContract leasingContract) {
-        return 0;
+    public void deleteLeasingContract(LeasingContract leasingContract) {
+        leasingContractRepository.delete(leasingContract);
     }
 }
