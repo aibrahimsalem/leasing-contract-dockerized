@@ -1,11 +1,13 @@
 package com.task.leasingcontract.model;
 
 import java.util.Date;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,5 +27,8 @@ public class Customer {
     private String firstname;
     private String lastname;
     private Date birthdate;
+
+    @OneToMany(mappedBy = "customer")
+    private List<LeasingContract> leasingContracts;
 
 }

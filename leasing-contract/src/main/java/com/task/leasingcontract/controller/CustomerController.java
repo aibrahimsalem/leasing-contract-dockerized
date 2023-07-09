@@ -25,8 +25,8 @@ public class CustomerController {
         return "customer Edited successfully";
     }
 
-   @DeleteMapping(path = "/{id}")
-   public @ResponseBody String deleteCustomer(@PathVariable String id) {
+   @DeleteMapping
+   public @ResponseBody String deleteCustomer(@RequestBody CustomerDto customerDto) {
     return "Customer deleted successfully";
    }
 }
