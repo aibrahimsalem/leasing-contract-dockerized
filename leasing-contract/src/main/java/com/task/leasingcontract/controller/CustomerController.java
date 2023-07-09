@@ -1,5 +1,7 @@
 package com.task.leasingcontract.controller;
 
+import com.task.leasingcontract.facade.CustomerFacade;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -13,19 +15,21 @@ import com.task.leasingcontract.dto.CustomerDto;
 @RestController
 @RequestMapping(value = "/customer")
 public class CustomerController {
-    
-    @PostMapping
-    public @ResponseBody String addCustomer(@RequestBody CustomerDto customerDto) {
-        return "customer Added successfully";
-    }
 
+    @Autowired
+    private CustomerFacade customerFacade;
+    @PostMapping
+    public @ResponseBody CustomerDto addCustomer(@RequestBody CustomerDto customerDto) {
+        return customerFacade.addCustomer(customerDto);
+    }
     @PutMapping
-    public @ResponseBody String editCustomer(@RequestBody CustomerDto customerDto) {
-        return "customer Edited successfully";
+    public @ResponseBody CustomerDto editCustomer(@RequestBody CustomerDto customerDto) {
+        return customerFacade.editCustomer(customerDto);
     }
 
    @DeleteMapping
    public @ResponseBody String deleteCustomer(@RequestBody CustomerDto customerDto) {
-    return "Customer deleted successfully";
+        customerFacade.deleteCustomer(customerDto);
+    return "Customer " +customerDto.getId()+ " deleted successfully";
    }
 }

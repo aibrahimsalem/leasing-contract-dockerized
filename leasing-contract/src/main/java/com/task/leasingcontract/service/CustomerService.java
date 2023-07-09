@@ -4,7 +4,7 @@ import com.task.leasingcontract.model.Customer;
 
 public interface CustomerService {
 
-    long addCustomer(Customer customer);
-    long editCustomer(Customer customer);
-    long deleteCustomer(Customer customer);
+    Customer addCustomer(Customer customer);
+    Customer editCustomer(Customer customer);
+    void deleteCustomer(Customer customer);
 }

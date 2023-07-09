@@ -14,9 +14,9 @@ public class LeasingContractSourceDestinationMapperImpl implements LeasingContra
         LeasingContractDto leasingContractDto = new LeasingContractDto();
         leasingContractDto.setContractNumber(String.valueOf(leasingContract.getContractNumber()));
         leasingContractDto.setId(String.valueOf(leasingContract.getId()));
-        leasingContractDto.setCustomerId(String.valueOf(leasingContract.getCustomer()));
+        leasingContractDto.setCustomerId(String.valueOf(leasingContract.getCustomer().getId()));
         leasingContractDto.setMonthlyRate(String.valueOf(leasingContract.getMonthlyRate()));
-        leasingContractDto.setVehicleId(String.valueOf(leasingContract.getVehicle()));
+        leasingContractDto.setVehicleId(String.valueOf(leasingContract.getVehicle().getId()));
         return leasingContractDto;
     }
 
@@ -25,7 +25,7 @@ public class LeasingContractSourceDestinationMapperImpl implements LeasingContra
         LeasingContract leasingContract = new LeasingContract();
         Customer customer = new Customer();
         Vehicle vehicle = new Vehicle();
-        leasingContract.setId(Long.parseLong(leasingContractDto.getId()));
+        leasingContract.setId(leasingContractDto.getId().isEmpty() ? 1 : Long.parseLong(leasingContractDto.getId()));
         leasingContract.setContractNumber(Long.parseLong(leasingContractDto.getContractNumber()));
         customer.setId(Long.parseLong(leasingContractDto.getCustomerId()));
         leasingContract.setCustomer(customer);

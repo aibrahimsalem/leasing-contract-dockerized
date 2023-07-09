@@ -14,20 +14,18 @@ public class LeasingContractController {
     private LeasingContractFacade leasingContractFacade;
 
     @PostMapping
-    public @ResponseBody String addLeasingContract(@RequestBody LeasingContractDto leasingContractDto) {
-        LeasingContractDto savedLeasingContractDto = leasingContractFacade.addLeasingContract(leasingContractDto);
-        return "Leasing contract Added successfully";
+    public @ResponseBody LeasingContractDto addLeasingContract(@RequestBody LeasingContractDto leasingContractDto) {
+        return leasingContractFacade.addLeasingContract(leasingContractDto);
     }
 
     @PutMapping
-    public @ResponseBody String editLeasingContract(@RequestBody LeasingContractDto leasingContractDto) {
-        LeasingContractDto editedLeasingContractDto = leasingContractFacade.editLeasingContract(leasingContractDto);
-        return "Leasing contract Edited successfully";
+    public @ResponseBody LeasingContractDto editLeasingContract(@RequestBody LeasingContractDto leasingContractDto) {
+        return leasingContractFacade.editLeasingContract(leasingContractDto);
     }
 
     @DeleteMapping
     public @ResponseBody String deleteLeasingContract(@RequestBody LeasingContractDto leasingContractDto) {
         leasingContractFacade.deleteLeasingContract(leasingContractDto);
-        return "Leasing contract deleted successfully";
+        return "Leasing contract " + leasingContractDto.getContractNumber() + " deleted successfully";
     }
 }
