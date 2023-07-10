@@ -18,6 +18,8 @@ for further documentation please have a look at [Docker compose installation gui
 ## Database Initialization
 #### Database initialization happens using spring data jpa, and it creates the schema based on the classes annotated with `@Entity`
 
+**Flyway** was supposed to be used here but somehow it doesn't work while JPA is in use, so the initialization is done using **data.sql** file
+
 #### For the first time before you run the application make sure that these two properties are set as follows in docker-compose.yml and in application.properties as well in case you are going to run it locally:
 
 `"spring.sql.init.mode": "always"`

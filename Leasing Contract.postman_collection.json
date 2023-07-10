@@ -1,0 +1,564 @@
+{
+	"info": {
+		"_postman_id": "ffc6b884-034c-4cbc-b194-31f4866c2811",
+		"name": "Leasing Contract",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "816881"
+	},
+	"item": [
+		{
+			"name": "Contract",
+			"item": [
+				{
+					"name": "Add Contract",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"\",\r\n    \"contractNumber\":\"1234\",\r\n    \"monthlyRate\":\"1.5\",\r\n    \"customerId\":\"123\",\r\n    \"vehicleId\":\"1111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/contract",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contract"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Contract",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1\",\r\n    \"contractNumber\":\"2365\",\r\n    \"monthlyRate\":\"1.95\",\r\n    \"customerId\":\"123\",\r\n    \"vehicleId\":\"1111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/contract",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contract"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Contract",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1\",\r\n    \"contractNumber\":\"1234\",\r\n    \"monthlyRate\":\"1.5\",\r\n    \"customerId\":\"123\",\r\n    \"vehicleId\":\"1111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/contract",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contract"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Contract By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"\",\r\n    \"contractNumber\":\"1234\",\r\n    \"monthlyRate\":\"1.5\",\r\n    \"customerId\":\"123\",\r\n    \"vehicleId\":\"1111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/contract/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contract",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Contracts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"\",\r\n    \"contractNumber\":\"1234\",\r\n    \"monthlyRate\":\"1.5\",\r\n    \"customerId\":\"123\",\r\n    \"vehicleId\":\"1111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/contract",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contract"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Delete Customer",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJodHRwOi8vMC4wLjAuMDo4MDgwL2hlbGxvIiwiaXNzIjoiaHR0cDovLzAuMC4wLjA6ODA4MC8iLCJleHAiOjE2NDYxNzI5MTUsInVzZXJuYW1lIjoiYWlicmFoaW1zYWxlbSJ9.e0G4mVEcj9iHmfFoitsXZ9INEcG16PNnNHIQdp0w5w5wE_o43MBsNxFQBU9GKyXsEPtEPobJGbCTV9lE29rrOg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1\",\r\n    \"firstname\":\"ahmed\",\r\n    \"lastname\":\"ibrahim\",\r\n    \"birthdate\":\"1990-03-18\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJodHRwOi8vMC4wLjAuMDo4MDgwL2hlbGxvIiwiaXNzIjoiaHR0cDovLzAuMC4wLjA6ODA4MC8iLCJleHAiOjE2NDYxNzI5MTUsInVzZXJuYW1lIjoiYWlicmFoaW1zYWxlbSJ9.e0G4mVEcj9iHmfFoitsXZ9INEcG16PNnNHIQdp0w5w5wE_o43MBsNxFQBU9GKyXsEPtEPobJGbCTV9lE29rrOg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"\",\r\n    \"firstname\":\"Ahmed\",\r\n    \"lastname\":\"ibrahim\",\r\n    \"birthdate\":\"1990-03-20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Customer",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJodHRwOi8vMC4wLjAuMDo4MDgwL2hlbGxvIiwiaXNzIjoiaHR0cDovLzAuMC4wLjA6ODA4MC8iLCJleHAiOjE2NDYxNzI5MTUsInVzZXJuYW1lIjoiYWlicmFoaW1zYWxlbSJ9.e0G4mVEcj9iHmfFoitsXZ9INEcG16PNnNHIQdp0w5w5wE_o43MBsNxFQBU9GKyXsEPtEPobJGbCTV9lE29rrOg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1\",\r\n    \"firstname\":\"dalia\",\r\n    \"lastname\":\"ibrahim\",\r\n    \"birthdate\":\"06-10-1980\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Customer By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJodHRwOi8vMC4wLjAuMDo4MDgwL2hlbGxvIiwiaXNzIjoiaHR0cDovLzAuMC4wLjA6ODA4MC8iLCJleHAiOjE2NDYxNzI5MTUsInVzZXJuYW1lIjoiYWlicmFoaW1zYWxlbSJ9.e0G4mVEcj9iHmfFoitsXZ9INEcG16PNnNHIQdp0w5w5wE_o43MBsNxFQBU9GKyXsEPtEPobJGbCTV9lE29rrOg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"\",\r\n    \"firstname\":\"ahmed\",\r\n    \"lastname\":\"ibrahim\",\r\n    \"birthdate\":\"1990-03-18\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/customer/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Customers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJodHRwOi8vMC4wLjAuMDo4MDgwL2hlbGxvIiwiaXNzIjoiaHR0cDovLzAuMC4wLjA6ODA4MC8iLCJleHAiOjE2NDYxNzI5MTUsInVzZXJuYW1lIjoiYWlicmFoaW1zYWxlbSJ9.e0G4mVEcj9iHmfFoitsXZ9INEcG16PNnNHIQdp0w5w5wE_o43MBsNxFQBU9GKyXsEPtEPobJGbCTV9lE29rrOg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"\",\r\n    \"firstname\":\"ahmed\",\r\n    \"lastname\":\"ibrahim\",\r\n    \"birthdate\":\"1990-03-18\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vehicle",
+			"item": [
+				{
+					"name": "Add Vehicle",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"\",\r\n    \"brand\":\"bmw\",\r\n    \"model\":\"123\",\r\n    \"modelYear\":\"2012\",\r\n    \"vehicleIdentificationNumber\":\"321\",\r\n    \"price\":\"111200\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/vehicle",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Vehicle",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1\",\r\n    \"brand\":\"audi\",\r\n    \"model\":\"123\",\r\n    \"modelYear\":\"2012\",\r\n    \"vehicleIdentificationNumber\":\"321\",\r\n    \"price\":\"111200\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/vehicle",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Vehicle",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1\",\r\n    \"brand\":\"bmw\",\r\n    \"model\":\"123\",\r\n    \"modelYear\":\"2012\",\r\n    \"vehicleIdentificationNumber\":\"321\",\r\n    \"price\":\"111200\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/vehicle",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Vehicle By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"\",\r\n    \"brand\":\"bmw\",\r\n    \"model\":\"123\",\r\n    \"modelYear\":\"2012\",\r\n    \"vehicleIdentificationNumber\":\"321\",\r\n    \"price\":\"111200\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/vehicle/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Vehicles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"\",\r\n    \"brand\":\"bmw\",\r\n    \"model\":\"123\",\r\n    \"modelYear\":\"2012\",\r\n    \"vehicleIdentificationNumber\":\"321\",\r\n    \"price\":\"111200\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/vehicle",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Overview",
+			"item": [
+				{
+					"name": "Overview",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"\",\r\n    \"contractNumber\":\"1234\",\r\n    \"monthlyRate\":\"1.5\",\r\n    \"customerId\":\"4\",\r\n    \"vehicleId\":\"5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/overview",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"overview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Overview for single contract",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"\",\r\n    \"contractNumber\":\"1234\",\r\n    \"monthlyRate\":\"1.5\",\r\n    \"customerId\":\"4\",\r\n    \"vehicleId\":\"5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/overview/1234",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"overview",
+								"1234"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -15,6 +15,7 @@ public class VehicleController {
 
     @Autowired
     private VehicleFacade vehicleFacade;
+
     @PostMapping
     public @ResponseBody VehicleDto addVehicle(@RequestBody VehicleDto vehicleDto) {
         return vehicleFacade.addVehicle(vehicleDto);
@@ -27,6 +28,7 @@ public class VehicleController {
 
     @DeleteMapping
     public @ResponseBody String deleteVehicle(@RequestBody VehicleDto vehicleDto) {
+        vehicleFacade.deleteVehicle(vehicleDto);
         return "Vehicle " + vehicleDto.getId() + " deleted successfully";
     }
 
