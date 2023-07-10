@@ -1,13 +1,15 @@
 package com.task.leasingcontract.service.impl;
 
-import com.task.leasingcontract.model.Customer;
 import com.task.leasingcontract.model.Vehicle;
 import com.task.leasingcontract.repository.VehicleRepository;
 import com.task.leasingcontract.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @Service
 public class VehicleServiceImpl implements VehicleService {
@@ -37,5 +39,18 @@ public class VehicleServiceImpl implements VehicleService {
     @Override
     public void deleteVehicle(Vehicle vehicle) {
         vehicleRepository.delete(vehicle);
+    }
+
+    @Override
+    public Vehicle findVehicleById(String id) {
+        Optional<Vehicle> vehicleOptional = vehicleRepository.findById(Long.parseLong(id));
+        return vehicleOptional.orElse(null);
+    }
+
+    @Override
+    public List<Vehicle> findAllVehicles() {
+        Iterable<Vehicle> allCustomers = vehicleRepository.findAll();
+        return StreamSupport.stream(allCustomers.spliterator(), false)
+                .collect(Collectors.toList());
     }
 }
