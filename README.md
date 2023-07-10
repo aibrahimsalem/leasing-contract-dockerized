@@ -1,6 +1,6 @@
 # Dockerized Leasing Contract Service
 
-### This service provides a restful endpoint to manage a leasing contract.
+### This service provides a restful endpoint to manage car rental leasing contract.
 
 # Dockerized Service
 ### This service is based on docker-compose in order to run it, please make sure that you have the following services up and running:
