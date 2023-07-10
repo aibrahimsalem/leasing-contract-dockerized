@@ -6,7 +6,10 @@ import com.task.leasingcontract.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
@@ -34,5 +37,18 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void deleteCustomer(Customer customer) {
         customerRepository.delete(customer);
+    }
+
+    @Override
+    public Customer findCustomerById(String id) {
+        Optional<Customer> customerOptional = customerRepository.findById(Long.parseLong(id));
+        return customerOptional.orElse(null);
+    }
+
+    @Override
+    public List<Customer> findAllCustomers() {
+        Iterable<Customer> allCustomers = customerRepository.findAll();
+        return StreamSupport.stream(allCustomers.spliterator(), false)
+                .collect(Collectors.toList());
     }
 }

@@ -25,7 +25,7 @@ public class LeasingContractSourceDestinationMapperImpl implements LeasingContra
         LeasingContract leasingContract = new LeasingContract();
         Customer customer = new Customer();
         Vehicle vehicle = new Vehicle();
-        leasingContract.setId(leasingContractDto.getId().isEmpty() ? 1 : Long.parseLong(leasingContractDto.getId()));
+        leasingContract.setId(leasingContractDto.getId().isEmpty() ? 0 : Long.parseLong(leasingContractDto.getId()));
         leasingContract.setContractNumber(Long.parseLong(leasingContractDto.getContractNumber()));
         customer.setId(Long.parseLong(leasingContractDto.getCustomerId()));
         leasingContract.setCustomer(customer);

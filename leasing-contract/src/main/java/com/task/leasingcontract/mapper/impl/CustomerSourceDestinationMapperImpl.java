@@ -25,7 +25,7 @@ public class CustomerSourceDestinationMapperImpl implements CustomerSourceDestin
     @Override
     public Customer mapCustomerDtoToCustomer(CustomerDto customerDto) {
         Customer customer = new Customer();
-        customer.setId(customerDto.getId().isEmpty() ? 1 : Long.parseLong(customerDto.getId()));
+        customer.setId(customerDto.getId().isEmpty() ? 0 : Long.parseLong(customerDto.getId()));
         customer.setFirstname(customerDto.getFirstname());
         customer.setLastname(customerDto.getLastname());
 
