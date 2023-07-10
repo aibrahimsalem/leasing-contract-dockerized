@@ -13,7 +13,7 @@ public class LeasingContract {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    private long contractNumber;
+    private Long contractNumber;
     private double monthlyRate;
 
     @ManyToOne(cascade = CascadeType.ALL)
