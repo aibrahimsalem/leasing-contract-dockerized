@@ -7,7 +7,7 @@
 
 1. Docker Desktop or equivalent on other operating systems.
 2. Docker compose.
-3. WSL-2 in case you are running from windows os.
+3. WSL-2 in case you are running the service on windows os.
 
 for further documentation please have a look at [Docker compose installation guide](https://docs.docker.com/compose/install/)
 
