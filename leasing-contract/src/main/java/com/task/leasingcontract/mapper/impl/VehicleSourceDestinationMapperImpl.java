@@ -2,7 +2,6 @@ package com.task.leasingcontract.mapper.impl;
 
 import com.task.leasingcontract.dto.VehicleDto;
 import com.task.leasingcontract.mapper.VehicleSourceDestinationMapper;
-import com.task.leasingcontract.model.LeasingContract;
 import com.task.leasingcontract.model.Vehicle;
 import org.springframework.stereotype.Component;
 
