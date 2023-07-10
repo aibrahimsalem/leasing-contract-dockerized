@@ -23,12 +23,15 @@ services:
         - $SPRING_LOCAL_PORT:$SPRING_DOCKER_PORT
       environment:
         SPRING_APPLICATION_JSON: '{
-          "spring.datasource.url"  : "jdbc:mysql://mysqldb:$MYSQLDB_DOCKER_PORT/$MYSQLDB_DATABASE?useSSL=true&allowPublicKeyRetrieval=false",
+          "spring.datasource.url"  : "jdbc:mysql://mysqldb:$MYSQLDB_DOCKER_PORT/$MYSQLDB_DATABASE?useSSL=true&allowPublicKeyRetrieval=false&createDatabaseIfNotExist=true",
           "spring.datasource.username" : "$MYSQLDB_USER",
           "spring.datasource.password" : "$MYSQLDB_ROOT_PASSWORD",
-          "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL8Dialect",
+          "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQLDialect",
           "spring.datasource.driver-class-name" : "com.mysql.cj.jdbc.Driver",
-          "spring.jpa.hibernate.ddl-auto" : "update"
+          "spring.jpa.hibernate.ddl-auto" : "none",
+          "spring.jpa.defer-datasource-initialization": "true",
+          "spring.sql.init.mode": "never",
+          "springdoc.api-docs.path" : "/api-docs"
           }'
 
       volumes:
