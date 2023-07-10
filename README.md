@@ -3,7 +3,7 @@
 ### This service provides a restful endpoint to manage a leasing contract.
 
 # Dockerized Service
-### This service is based on docker compose in order to run it, please make sure that you have the following services up and running:
+### This service is based on docker-compose in order to run it, please make sure that you have the following services up and running:
 
 1. Docker Desktop or equivalent on other operating systems.
 2. Docker compose.
@@ -18,7 +18,7 @@ for further documentation please have a look at [Docker compose installation gui
 ## Database Initialization
 #### database initialization happens using spring data jpa, and it creates the schema bases on the classes annotated with `@Entity`
 
-#### for the first time before you run the application make sure that this two properties are set as follows in docker-compose.yml and in application.properties as well in case you are going to run it locally:
+#### for the first time before you run the application make sure that these two properties are set as follows in docker-compose.yml and in application.properties as well in case you are going to run it locally:
 
 `"spring.sql.init.mode": "always"`
 
@@ -30,7 +30,7 @@ for further documentation please have a look at [Docker compose installation gui
 
 `"spring.jpa.hibernate.ddl-auto" : "none"`
 
-**make sure that the port 3306 is not taken by any other application**
+**make sure that port 3306 is not taken by any other application**
 
 
 # How to run the service
