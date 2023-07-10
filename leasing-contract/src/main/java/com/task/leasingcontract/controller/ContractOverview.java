@@ -18,7 +18,7 @@ public class ContractOverview {
     private OverviewService overviewService;
 
     @GetMapping(path = "/{id}")
-    public OverviewDto getDetails(@PathVariable String id) {
+    public OverviewDto getContractOverview(@PathVariable String id) {
         return overviewService.findLeasingContractOverview(Long.parseLong(id));
     }
 
