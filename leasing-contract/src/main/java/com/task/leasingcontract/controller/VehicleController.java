@@ -1,9 +1,7 @@
 package com.task.leasingcontract.controller;
 
-import com.task.leasingcontract.dto.LeasingContractDto;
 import com.task.leasingcontract.dto.VehicleDto;
 import com.task.leasingcontract.facade.VehicleFacade;
-import com.task.leasingcontract.model.Vehicle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
