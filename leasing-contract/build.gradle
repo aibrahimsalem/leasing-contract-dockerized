@@ -23,6 +23,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'com.h2database:h2:2.2.220'
+	/*implementation 'org.flywaydb:flyway-core:9.20.0'
+	implementation 'org.flywaydb:flyway-mysql:9.20.0'*/
 	/*implementation 'org.mapstruct:mapstruct:1.5.5.Final'
 	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'*/
 	annotationProcessor 'org.projectlombok:lombok:1.18.28'
