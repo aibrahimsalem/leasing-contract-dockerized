@@ -6,7 +6,10 @@ import com.task.leasingcontract.service.LeasingContractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @Service
 public class LeasingContractServiceImpl implements LeasingContractService {
@@ -34,5 +37,17 @@ public class LeasingContractServiceImpl implements LeasingContractService {
     @Override
     public void deleteLeasingContract(LeasingContract leasingContract) {
         leasingContractRepository.delete(leasingContract);
+    }
+
+    @Override
+    public LeasingContract findLeasingContractById(String id) {
+        Optional<LeasingContract> leasingContractOptional = leasingContractRepository.findById(Long.parseLong(id));
+        return leasingContractOptional.orElse(null);
+    }
+
+    @Override
+    public List<LeasingContract> findAllLeasingContracts() {
+        Iterable<LeasingContract> allLeasingContracts = leasingContractRepository.findAll();
+        return StreamSupport.stream(allLeasingContracts.spliterator(), false).collect(Collectors.toList());
     }
 }

@@ -5,6 +5,8 @@ import com.task.leasingcontract.facade.LeasingContractFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/contract")
 public class LeasingContractController {
@@ -27,5 +29,15 @@ public class LeasingContractController {
     public @ResponseBody String deleteLeasingContract(@RequestBody LeasingContractDto leasingContractDto) {
         leasingContractFacade.deleteLeasingContract(leasingContractDto);
         return "Leasing contract " + leasingContractDto.getContractNumber() + " deleted successfully";
+    }
+
+    @GetMapping(path = "/{id}")
+    public @ResponseBody LeasingContractDto findLeasingContractById(@PathVariable String id) {
+        return leasingContractFacade.findLeasingContractById(id);
+    }
+
+    @GetMapping
+    public List<LeasingContractDto> findAllLeasingContracts() {
+        return leasingContractFacade.findAllLeasingContracts();
     }
 }
