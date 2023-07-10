@@ -1,17 +1,15 @@
 package com.task.leasingcontract.dto;
 
 
-import lombok.Data;
-
 public interface OverviewDto {
 
-    String getContractNumber();
+    Long getContract_Number();
     String getFirstname();
     String getLastname();
     String getBrand();
     String getModel();
-    String getModelYear();
-    String getVehicleIdentificationNumber();
-    String getMonthlyRate();
-    String getPrice();
+    String getModel_Year();
+    String getVehicle_Identification_Number();
+    Double getMonthly_Rate();
+    Double getPrice();
 }

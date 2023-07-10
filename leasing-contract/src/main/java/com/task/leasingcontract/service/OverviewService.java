@@ -1,8 +1,10 @@
 package com.task.leasingcontract.service;
 
 import com.task.leasingcontract.dto.OverviewDto;
-import com.task.leasingcontract.model.Vehicle;
+
+import java.util.List;
 
 public interface OverviewService {
-    OverviewDto findLeasingContract(Long leasingContractNumber);
+    OverviewDto findLeasingContractOverview(Long leasingContractNumber);
+    List<OverviewDto> findAllLeasingContractOverview();
 }

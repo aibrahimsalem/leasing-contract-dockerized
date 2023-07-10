@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/overview")
 public class ContractOverview {
@@ -17,7 +19,12 @@ public class ContractOverview {
 
     @GetMapping(path = "/{id}")
     public OverviewDto getDetails(@PathVariable String id) {
-        return overviewService.findLeasingContract(Long.parseLong(id));
+        return overviewService.findLeasingContractOverview(Long.parseLong(id));
+    }
+
+    @GetMapping
+    public List<OverviewDto> getAllContractsOverview() {
+        return overviewService.findAllLeasingContractOverview();
     }
 
 }
