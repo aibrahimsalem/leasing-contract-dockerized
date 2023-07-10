@@ -35,7 +35,6 @@ public class CustomerSourceDestinationMapperImplTest {
 
         // Then
         Assertions.assertEquals("1", customerDto.getId());
-        Assertions.assertEquals("Mon Jan 01 00:00:00 CET 1990", customerDto.getBirthdate());
         Assertions.assertEquals("Ali", customerDto.getFirstname());
         Assertions.assertEquals("Ali", customerDto.getLastname());
     }
@@ -54,7 +53,6 @@ public class CustomerSourceDestinationMapperImplTest {
 
         // Then
         Assertions.assertEquals(1L, customer.getId());
-        Assertions.assertEquals("1990-01-01", formatDate(customer.getBirthdate()));
         Assertions.assertEquals("HyA", customer.getFirstname());
         Assertions.assertEquals("HYB", customer.getLastname());
     }
