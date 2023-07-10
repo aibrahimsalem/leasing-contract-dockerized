@@ -16,15 +16,15 @@ for further documentation please have a look at [Docker compose installation gui
 
 
 ## Database Initialization
-#### database initialization happens using spring data jpa, and it creates the schema bases on the classes annotated with `@Entity`
+#### Database initialization happens using spring data jpa, and it creates the schema based on the classes annotated with `@Entity`
 
-#### for the first time before you run the application make sure that these two properties are set as follows in docker-compose.yml and in application.properties as well in case you are going to run it locally:
+#### For the first time before you run the application make sure that these two properties are set as follows in docker-compose.yml and in application.properties as well in case you are going to run it locally:
 
 `"spring.sql.init.mode": "always"`
 
 `"spring.jpa.hibernate.ddl-auto" : "update"`
 
-#### for consecutive runs change these two properties to:
+#### For consecutive runs change these two properties to:
 
 `"spring.sql.init.mode": "never"`
 
